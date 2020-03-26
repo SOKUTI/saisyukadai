@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    redirect_to root_path unless user_signed_in?
     @item = Item.new
     @item.item_images.new
   end
